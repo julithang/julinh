@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Germany &mdash; Trip Planner</title>
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body class="theme-germany" data-country="germany">
+  <header class="top-bar">
+    <a class="brand" href="index.html">Iceland &amp; Germany</a>
+    <nav>
+      <a href="flights.html">Flights</a>
+      <a href="iceland.html">Iceland</a>
+      <a href="germany.html" class="active">Germany</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="page-head">
+      <h1>Germany Itinerary</h1>
+      <p>Drag activities from the list onto a day to build your plan. Everything saves automatically.</p>
+    </div>
+
+    <div class="planner-controls">
+      <label>Start date <input type="date" id="start-date-input" /></label>
+      <button class="btn-ghost" id="remove-day-btn">&minus; Day</button>
+      <button class="btn-ghost" id="add-day-btn">+ Day</button>
+      <button class="btn-ghost" id="clear-plan-btn">Clear plan</button>
+    </div>
+
+    <div class="planner-layout">
+      <aside class="planner-sidebar">
+        <h3>Suggested Activities</h3>
+        <div class="category-filters" id="category-filters"></div>
+        <div class="activity-pool" id="activity-pool"></div>
+        <form class="custom-activity-form" id="custom-activity-form">
+          <input type="text" id="custom-activity-input" placeholder="Add your own idea&hellip;" />
+          <button type="submit">Add</button>
+        </form>
+      </aside>
+
+      <div class="day-columns" id="day-columns"></div>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/planner.js"></script>
+</body>
+</html>
