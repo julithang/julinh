@@ -85,7 +85,7 @@ function renderSchedule() {
         <div><dt>Route</dt><dd>${f.from.city} (${f.from.code}) &rarr; ${f.to.city} (${f.to.code})</dd></div>
         <div><dt>Departs</dt><dd>${f.from.time}</dd></div>
         <div><dt>Arrives</dt><dd>${arrivalLabel}</dd></div>
-        <div><dt>Confirmation</dt><dd>${f.confirmation}</dd></div>
+        <div><dt>Confirmation</dt><dd>${f.confirmation || "Not yet booked"}</dd></div>
         <div><dt>Notes</dt><dd>${f.notes || "—"}</dd></div>
       `;
       dayEl.appendChild(grid);

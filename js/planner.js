@@ -3,6 +3,16 @@
   const baseActivities = country === "iceland" ? ICELAND_ACTIVITIES : GERMANY_ACTIVITIES;
   const tripConfig = TRIP_CONFIG[country];
   const storageKey = `trip-planner-${country}`;
+  const mapsCountryLabel = country === "iceland" ? "Iceland" : "Hamburg, Germany";
+
+  function mapsSearchUrl(title) {
+    return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(title + ", " + mapsCountryLabel);
+  }
+
+  const savedPlacesLink = document.getElementById("saved-places-link");
+  if (savedPlacesLink && typeof SAVED_PLACES_MAP_URL !== "undefined") {
+    savedPlacesLink.href = SAVED_PLACES_MAP_URL;
+  }
 
   let state = loadState();
 
@@ -78,6 +88,7 @@
           <div class="a-meta">${a.duration}h</div>
           <div class="a-desc">${a.desc || ""}</div>
           <span class="tag">${a.category}</span>
+          <a class="maps-link" href="${mapsSearchUrl(a.title)}" target="_blank" rel="noopener">&#128205; Map</a>
         `;
         card.addEventListener("dragstart", (e) => {
           card.classList.add("dragging");
@@ -173,6 +184,7 @@
       <button class="remove-btn" aria-label="Remove">&times;</button>
       <div class="p-title">${activity ? activity.title : "Activity"}</div>
       <div class="p-meta">${activity ? activity.duration + "h" : ""}</div>
+      ${activity ? `<a class="maps-link" href="${mapsSearchUrl(activity.title)}" target="_blank" rel="noopener">&#128205; Map</a>` : ""}
     `;
     card.addEventListener("dragstart", (e) => {
       e.dataTransfer.setData(

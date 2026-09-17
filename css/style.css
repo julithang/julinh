@@ -394,6 +394,25 @@ a { color: inherit; }
   margin-top: 4px;
 }
 
+.maps-link {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.72rem;
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.maps-link:hover {
+  text-decoration: underline;
+}
+
+.theme-iceland .maps-link:hover { color: var(--iceland-dark); }
+.theme-germany .maps-link:hover { color: var(--germany-dark); }
+
+.placed-card .maps-link {
+  margin-top: 4px;
+}
+
 .theme-iceland .tag { background: var(--iceland-light); color: var(--iceland-dark); }
 .theme-germany .tag { background: var(--germany-light); color: var(--germany-dark); }
 
