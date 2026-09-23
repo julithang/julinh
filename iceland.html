@@ -4,13 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Iceland &mdash; Trip Planner</title>
+  <meta name="description" content="Iceland itinerary calendar, Dec 1 - Dec 9, 2026." />
   <link href="css/style.css" rel="stylesheet" />
 </head>
-<body class="theme-iceland" data-country="iceland">
+<body class="theme-iceland">
   <header class="top-bar">
     <a class="brand" href="index.html">Iceland &amp; Germany</a>
     <nav>
-      <a href="flights.html">Flights</a>
+      <a href="travel.html">travel</a>
       <a href="iceland.html" class="active">Iceland</a>
       <a href="germany.html">Germany</a>
     </nav>
@@ -18,33 +19,180 @@
 
   <main class="page">
     <div class="page-head">
-      <h1>Iceland Itinerary</h1>
-      <p>Drag activities from the list onto a day to build your plan. Everything saves automatically.</p>
+      <h1>Iceland</h1>
+      <p>Dec 2 &ndash; Dec 9, 2026 &middot; 7 nights in Reykjavik &middot; 5 tours booked</p>
     </div>
 
-    <div class="planner-controls">
-      <label>Start date <input type="date" id="start-date-input" /></label>
-      <button class="btn-ghost" id="remove-day-btn">&minus; Day</button>
-      <button class="btn-ghost" id="add-day-btn">+ Day</button>
-      <button class="btn-ghost" id="clear-plan-btn">Clear plan</button>
-    </div>
+    <section class="stay-card">
+      <div class="stay-main">
+        <span class="s-label">Where we are staying</span>
+        <h2>CityHub Reykjavik</h2>
+        <p class="stay-address">
+          <a href="https://maps.app.goo.gl/9ybACGqbvUn9ytTx7" target="_blank" rel="noopener">46 Hverfisgata, Reykjavik, Reykjav&iacute;kurborg, IS &nearr;</a>
+        </p>
+      </div>
+      <dl class="stay-facts">
+        <div><dt>Room</dt><dd>2 Twin</dd></div>
+        <div><dt>Nights</dt><dd>Dec 2 &ndash; Dec 9 (7)</dd></div>
+        <div><dt>Confirmation</dt><dd><code>H-V3P53LHLX4GC</code></dd></div>
+      </dl>
+    </section>
 
-    <div class="planner-layout">
-      <aside class="planner-sidebar">
-        <h3>Suggested Activities</h3>
-        <div class="category-filters" id="category-filters"></div>
-        <div class="activity-pool" id="activity-pool"></div>
-        <form class="custom-activity-form" id="custom-activity-form">
-          <input type="text" id="custom-activity-input" placeholder="Add your own idea&hellip;" />
-          <button type="submit">Add</button>
-        </form>
-      </aside>
+    <h2 class="section-title">Day by day</h2>
+    <p class="wv-hint">Tue Dec 1 &ndash; Wed Dec 9. Times are local.</p>
 
-      <div class="day-columns" id="day-columns"></div>
+    <div id="itinerary"></div>
+
+    <p class="wv-legend">
+      <span class="lg-tour">Booked tour</span>
+      <span class="lg-travel">Travel</span>
+      <span class="lg-open">Open</span>
+    </p>
+
+    <h2 class="section-title">What is on each tour</h2>
+    <div class="tour-grid">
+      <article class="tour-card">
+        <span class="tour-when">Thu, Dec 3</span>
+        <h3>Golden Circle, Fri&eth;heimar Farm &amp; Laugar&aacute;s Lagoon</h3>
+        <p class="tour-op">Wake Up Reykjavik &middot; 08:30 &ndash; 18:30</p>
+        <ul class="tour-stops">
+          <li>Gullfoss (Golden Waterfall)</li>
+          <li>Geysir &amp; Haukadalur geothermal area</li>
+          <li>&THORN;ingvellir National Park &mdash; Silfra, waterfalls, Icelandic Parliament, tectonic plates</li>
+          <li>Fri&eth;heimar Tomato Farm</li>
+          <li>Laugar&aacute;s Lagoon (bathing)</li>
+        </ul>
+        <p class="tour-foot"><strong>Pickup &amp; drop-off:</strong> 101 H&oacute;tel &mdash; wait at Bus Stop 6, The Culture House, Hverfisgata 101. Bring swimsuits.</p>
+      </article>
+
+      <article class="tour-card">
+        <span class="tour-when">Fri, Dec 4</span>
+        <h3>South Coast Adventure Tour</h3>
+        <p class="tour-op">east2west &middot; 09:00 &ndash; 19:00</p>
+        <ul class="tour-stops">
+          <li>Seljalandsfoss</li>
+          <li>Sk&oacute;gafoss</li>
+          <li>Reynisfjara Black Sand Beach</li>
+          <li>Glj&uacute;frab&uacute;i Secret Waterfall</li>
+          <li>S&oacute;lheimaj&ouml;kull Glacier</li>
+          <li>V&iacute;k (small coastal town)</li>
+        </ul>
+        <p class="tour-foot"><strong>Pickup:</strong> 8:30 AM at Bus Stop 6, The Culture House.</p>
+      </article>
+
+      <article class="tour-card">
+        <span class="tour-when">Sat, Dec 5</span>
+        <h3>Northern Lights Hunt</h3>
+        <p class="tour-op">Wake Up Reykjavik &middot; 20:30 &ndash; 01:00</p>
+        <ul class="tour-stops">
+          <li>Small-group aurora hunt, off the beaten path</li>
+          <li>Hot chocolate &amp; kleina pastries</li>
+          <li>Wool blankets &amp; free Wi-Fi on board</li>
+        </ul>
+        <p class="tour-foot"><strong>Pickup:</strong> 8:30&ndash;9:00 PM at Bus Stop 6, The Culture House, 15 Hverfisgata. Returns around 1 AM on Dec 6.</p>
+      </article>
+
+      <article class="tour-card">
+        <span class="tour-when">Sun, Dec 6</span>
+        <h3>Reykjavik Food Tour</h3>
+        <p class="tour-op">Wake Up Reykjavik &middot; 12:30 &ndash; 15:30</p>
+        <ul class="tour-stops">
+          <li>Five top local restaurants</li>
+        </ul>
+        <p class="tour-foot"><strong>Meet at:</strong> Harpa Concert Hall, Austurbakki.</p>
+      </article>
+
+      <article class="tour-card">
+        <span class="tour-when">Mon, Dec 7</span>
+        <h3>Silver Circle &mdash; West Iceland Small Group Day Tour to the Lava Cave</h3>
+        <p class="tour-op">Nice Travel &middot; from 08:30</p>
+        <ul class="tour-stops">
+          <li>Glanni Waterfall</li>
+          <li>Deildartunguhver &mdash; most powerful hot spring in Europe</li>
+          <li>Sturlureykir Horse Farm</li>
+          <li>Reykholt Historic Site</li>
+          <li>Hraunfossar (Lava Falls)</li>
+          <li>Barnafoss</li>
+          <li>Vi&eth;gelmir Lava Cave</li>
+        </ul>
+        <p class="tour-foot"><strong>Pickup &amp; drop-off:</strong> 8:30 AM at Bus Stop 6, Safnah&uacute;si&eth; (Culture House). Hiking boots recommended.</p>
+      </article>
     </div>
   </main>
 
-  <script src="js/data.js"></script>
-  <script src="js/planner.js"></script>
+  <script>
+    window.ITINERARY = {
+      start: "2026-12-01",
+      end: "2026-12-09",
+      events: [
+        {
+          date: "2026-12-01", start: "19:25", end: "24:00", kind: "travel",
+          timeLabel: "7:25 PM → overnight",
+          title: "Fly JFK → KEF",
+          sub: "Icelandair FI 614 &middot; lands 6:10 AM Dec 2"
+        },
+        {
+          date: "2026-12-02", start: "06:10", end: "08:30", kind: "travel",
+          title: "Land at Keflavik",
+          sub: "Transfer into Reykjavik"
+        },
+        {
+          date: "2026-12-02",
+          title: "Check into CityHub Reykjavik",
+          sub: "46 Hverfisgata"
+        },
+        {
+          date: "2026-12-02", kind: "open",
+          title: "Rest of the day open"
+        },
+        {
+          date: "2026-12-03", start: "08:30", end: "18:30",
+          title: "Golden Circle, Friðheimar Farm & Laugarás Lagoon",
+          sub: "Wake Up Reykjavik &middot; pickup 8:30 AM, Bus Stop 6 &mdash; The Culture House"
+        },
+        {
+          date: "2026-12-04", start: "08:30", end: "19:00",
+          timeLabel: "8:30 AM pickup · 9 AM – 7 PM",
+          title: "South Coast Adventure Tour",
+          sub: "east2west &middot; Bus Stop 6 &mdash; The Culture House"
+        },
+        {
+          date: "2026-12-05", kind: "open",
+          title: "Day open — keep it easy"
+        },
+        {
+          date: "2026-12-05", start: "20:30", end: "24:00",
+          timeLabel: "8:30 PM – 1 AM",
+          title: "Northern Lights Hunt",
+          sub: "Wake Up Reykjavik &middot; pickup 8:30–9:00 PM, Bus Stop 6 &middot; back after midnight"
+        },
+        {
+          date: "2026-12-06", start: "12:30", end: "15:30",
+          title: "Reykjavik Food Tour",
+          sub: "Wake Up Reykjavik &middot; meet at Harpa Concert Hall"
+        },
+        {
+          date: "2026-12-07", start: "08:30", end: "18:30",
+          title: "Silver Circle — West Iceland & the Lava Cave",
+          sub: "Nice Travel &middot; pickup 8:30 AM, Bus Stop 6 &mdash; Safnahúsið &middot; hiking boots"
+        },
+        {
+          date: "2026-12-08", kind: "open",
+          title: "Open day — last full day in Reykjavik"
+        },
+        {
+          date: "2026-12-09",
+          title: "Check out of CityHub"
+        },
+        {
+          date: "2026-12-09", start: "14:45", end: "24:00", kind: "travel",
+          timeLabel: "2:45 PM → 9:55 PM",
+          title: "Fly KEF → HAM",
+          sub: "KL 2746 via Amsterdam &middot; lands Hamburg 9:55 PM"
+        }
+      ]
+    };
+  </script>
+  <script src="js/itinerary.js"></script>
 </body>
 </html>

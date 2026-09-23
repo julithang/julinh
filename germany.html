@@ -4,13 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Germany &mdash; Trip Planner</title>
+  <meta name="description" content="Hamburg and Berlin itinerary calendar, Dec 9 - Dec 14, 2026." />
   <link href="css/style.css" rel="stylesheet" />
 </head>
-<body class="theme-germany" data-country="germany">
+<body class="theme-germany">
   <header class="top-bar">
     <a class="brand" href="index.html">Iceland &amp; Germany</a>
     <nav>
-      <a href="flights.html">Flights</a>
+      <a href="travel.html">travel</a>
       <a href="iceland.html">Iceland</a>
       <a href="germany.html" class="active">Germany</a>
     </nav>
@@ -18,33 +19,152 @@
 
   <main class="page">
     <div class="page-head">
-      <h1>Germany Itinerary</h1>
-      <p>Drag activities from the list onto a day to build your plan. Everything saves automatically.</p>
+      <h1>Germany</h1>
+      <p>Dec 9 &ndash; Dec 14, 2026 &middot; Hamburg base, one night in Berlin &middot; loose plan, nothing locked</p>
     </div>
 
-    <div class="planner-controls">
-      <label>Start date <input type="date" id="start-date-input" /></label>
-      <button class="btn-ghost" id="remove-day-btn">&minus; Day</button>
-      <button class="btn-ghost" id="add-day-btn">+ Day</button>
-      <button class="btn-ghost" id="clear-plan-btn">Clear plan</button>
-    </div>
+    <p class="inline-link">
+      <a href="https://maps.app.goo.gl/7ZZvMnzvFcStVFDi8" target="_blank" rel="noopener">Open the saved Google Maps list &rarr;</a>
+    </p>
 
-    <div class="planner-layout">
-      <aside class="planner-sidebar">
-        <h3>Suggested Activities</h3>
-        <div class="category-filters" id="category-filters"></div>
-        <div class="activity-pool" id="activity-pool"></div>
-        <form class="custom-activity-form" id="custom-activity-form">
-          <input type="text" id="custom-activity-input" placeholder="Add your own idea&hellip;" />
-          <button type="submit">Add</button>
-        </form>
-      </aside>
+    <section class="stay-card">
+      <div class="stay-main">
+        <span class="s-label">Where we are staying in Hamburg</span>
+        <h2>CAB20</h2>
+        <p class="stay-address">
+          <a href="https://maps.app.goo.gl/UtUzSLCeU8bM149C9" target="_blank" rel="noopener">Brennerstra&szlig;e 20, 20099 Hamburg, Germany &nearr;</a>
+        </p>
+      </div>
+      <dl class="stay-facts">
+        <div><dt>Nights</dt><dd>Dec 9 &ndash; Dec 14 (5)</dd></div>
+        <div><dt>Dec 12</dt><dd>Room held while we're in Berlin</dd></div>
+      </dl>
+    </section>
 
-      <div class="day-columns" id="day-columns"></div>
-    </div>
+    <section class="stay-card">
+      <div class="stay-main">
+        <span class="s-label">Where we are staying in Berlin</span>
+        <h2>Adina Apartment Hotel Berlin Checkpoint Charlie</h2>
+        <p class="stay-address">
+          <a href="https://maps.app.goo.gl/LuyTJ3PgvsmHae7s6" target="_blank" rel="noopener">Krausenstrasse 35&ndash;36, Berlin, BE, DE &nearr;</a>
+        </p>
+        <p class="stay-address"><a href="tel:+49302007670">+49 30 200 76 70</a></p>
+      </div>
+      <dl class="stay-facts">
+        <div><dt>Check-in</dt><dd>Sat, Dec 12 &middot; 3:00 PM</dd></div>
+        <div><dt>Checkout</dt><dd>Sun, Dec 13 &middot; 11:00 AM</dd></div>
+        <div><dt>Nights</dt><dd>1</dd></div>
+      </dl>
+    </section>
+
+    <h2 class="section-title">Day by day</h2>
+    <p class="wv-hint">Wed Dec 9 &ndash; Mon Dec 14. Plans without a time show first on each day &mdash; give them times as they firm up.</p>
+
+    <div id="itinerary"></div>
+
+    <p class="wv-legend">
+      <span class="lg-plan">Plan</span>
+      <span class="lg-travel">Travel</span>
+      <span class="lg-night">Berlin night</span>
+      <span class="lg-open">Open</span>
+    </p>
+
+    <section class="loose-ends">
+      <h2 class="section-title">Still to sort</h2>
+      <ul>
+        <li>Book the Hamburg &harr; Berlin train both ways</li>
+        <li>Confirm the Berlin night</li>
+        <li>Pick the Saturday club &mdash; check Kraftwerk's schedule closer to the date</li>
+        <li>Fill in Friday afternoon</li>
+      </ul>
+    </section>
   </main>
 
-  <script src="js/data.js"></script>
-  <script src="js/planner.js"></script>
+  <script>
+    window.ITINERARY = {
+      start: "2026-12-09",
+      end: "2026-12-14",
+      events: [
+        {
+          date: "2026-12-09", start: "21:55", end: "23:30", kind: "travel",
+          timeLabel: "9:55 PM",
+          title: "Land at Hamburg",
+          sub: "KLM KL 1759 from Amsterdam"
+        },
+        {
+          date: "2026-12-09", kind: "plan",
+          title: "Check into CAB20 and zzz",
+          sub: "Brennerstraße 20"
+        },
+        {
+          date: "2026-12-10", kind: "plan",
+          title: "See bà nội"
+        },
+        {
+          date: "2026-12-10", kind: "plan",
+          title: "Miniatur Wunderland",
+          sub: "Winkelgasse &middot; Urban Apes"
+        },
+        {
+          date: "2026-12-11", kind: "plan",
+          title: "See bà nội"
+        },
+        {
+          date: "2026-12-11", kind: "open",
+          title: "Pretty open otherwise — meet Suzanne's friend?"
+        },
+        {
+          date: "2026-12-12", kind: "travel",
+          timeLabel: "Train",
+          title: "Hamburg → Berlin",
+          sub: "ICE, ~2 hrs &middot; not booked yet"
+        },
+        {
+          date: "2026-12-12", kind: "plan",
+          title: "Kraftwerk or another klub"
+        },
+        {
+          date: "2026-12-12", start: "15:00", end: "16:00", kind: "night",
+          timeLabel: "3:00 PM check-in",
+          title: "Adina Apartment Hotel Berlin",
+          sub: "Krausenstrasse 35–36 &middot; Checkpoint Charlie"
+        },
+        {
+          date: "2026-12-13", start: "11:00", end: "11:30", kind: "night",
+          timeLabel: "11:00 AM checkout",
+          title: "Check out of Adina Berlin"
+        },
+        {
+          date: "2026-12-13", kind: "travel",
+          timeLabel: "Train",
+          title: "Berlin → back north"
+        },
+        {
+          date: "2026-12-13", kind: "plan",
+          title: "Lüneburg — Salzmuseum"
+        },
+        {
+          date: "2026-12-13", kind: "plan",
+          title: "Hamburg — Kunsthalle"
+        },
+        {
+          date: "2026-12-14", kind: "plan",
+          title: "Check out of CAB20"
+        },
+        {
+          date: "2026-12-14", start: "12:25", end: "15:20", kind: "travel",
+          title: "Fly HAM → HEL",
+          sub: "Finnair AY 1424"
+        },
+        {
+          date: "2026-12-14", start: "16:50", end: "24:00", kind: "travel",
+          timeLabel: "4:50 PM → 7:05 PM New York",
+          title: "Fly HEL → JFK",
+          sub: "Finnair AY 15 &middot; 9h 15m &middot; we outtie to USA"
+        }
+      ]
+    };
+  </script>
+  <script src="js/itinerary.js"></script>
 </body>
 </html>
